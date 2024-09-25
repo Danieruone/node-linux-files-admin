@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc && node dist/app.js",
+    "start-server": "npx tsc && node dist/app.js",
+    "create-file": "npx tsc && node dist/createFile.js",
     "lint": "eslint . "
   },
   "keywords": [],
