@@ -1,13 +1,12 @@
 import express from 'express'
+import fileRoutes from './routes/fileRoutes'
+
 const app = express()
-const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// JSON middleware
+app.use(express.json())
 
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`)
-})
+// file routes
+app.use('/api', fileRoutes)
 
-// TODO: Implement create file endpoint implementing the service
+export default app
