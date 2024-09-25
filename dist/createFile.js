@@ -10,18 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fileService_1 = require("./services/fileService");
-// Función principal que ejecuta la creación del archivo
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield (0, fileService_1.createFile)('miArchivo.txt', 'Este es el contenido de mi archivo');
-            console.log('Archivo creado exitosamente.');
+            yield (0, fileService_1.createFile)('myFile.txt', 'This is the content of the file');
+            console.log('File successfully created');
         }
         catch (error) {
-            console.error('Hubo un error al crear el archivo:', error);
+            console.error('There was an error creating the file:', error);
         }
     });
 }
-// Ejecutar la función principal
 main();
 //# sourceMappingURL=createFile.js.map

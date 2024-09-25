@@ -13,23 +13,23 @@ exports.createFile = createFile;
 const fs_1 = require("fs");
 const path_1 = require("path");
 /**
- * Crea un archivo en el sistema de archivos
- * @param nombre - El nombre del archivo a crear, incluyendo extensión
- * @param contenido - El contenido que tendrá el archivo
- * @returns Promise<void> - Promesa que se resuelve cuando el archivo es creado
+ * Creates a file in the file system
+ * @param name - The name of the file to create, including extension
+ * @param content - The content that the file will have
+ * @returns Promise<void> - A promise that resolves when the file is created
  */
-function createFile(nombre, contenido) {
+function createFile(name, content) {
     return __awaiter(this, void 0, void 0, function* () {
-        const ruta = (0, path_1.join)(__dirname, '../../files', nombre); // Crea el archivo en la carpeta 'files'
+        const path = (0, path_1.join)(__dirname, '../../files', name); // Creates the file in the 'files' folder
         return new Promise((resolve, reject) => {
-            (0, fs_1.writeFile)(ruta, contenido, 'utf8', (err) => {
+            (0, fs_1.writeFile)(path, content, 'utf8', (err) => {
                 if (err) {
-                    console.error('Error al crear el archivo:', err);
-                    reject(err); // Rechaza la promesa si ocurre un error
+                    console.error('Error creating the file:', err);
+                    reject(err); // Rejects the promise if an error occurs
                 }
                 else {
-                    console.log(`Archivo ${nombre} creado exitosamente en la ruta ${ruta}.`);
-                    resolve(); // Resuelve la promesa si el archivo se crea correctamente
+                    console.log(`File ${name} created successfully at ${path}.`);
+                    resolve(); // Resolves the promise if the file is created successfully
                 }
             });
         });
