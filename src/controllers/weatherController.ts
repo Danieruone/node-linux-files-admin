@@ -13,3 +13,15 @@ export async function writeWeatherData(
     res.status(500).json({ error: 'Error creating file' })
   }
 }
+
+export async function getWeatherData(
+  req: Request,
+  res: Response
+): Promise<void> {
+  try {
+    const data = await weatherService.getWeatherData()
+    res.status(201).json(data)
+  } catch (error) {
+    res.status(500).json({ error: 'Error getting data' })
+  }
+}
