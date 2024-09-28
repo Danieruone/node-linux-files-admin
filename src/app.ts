@@ -1,5 +1,5 @@
 import express from 'express'
-import fileRoutes from './routes/fileRoutes'
+import fileRoutes from './routes/weatherRoutes'
 
 const app = express()
 
