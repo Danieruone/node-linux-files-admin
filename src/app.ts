@@ -3,6 +3,9 @@ import weatherRoutes from './routes/weatherRoutes'
 
 const app = express()
 
+// config to serve static files
+app.use(express.static('public'))
+
 // JSON middleware
 app.use(express.json())
 
