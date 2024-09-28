@@ -1,5 +1,5 @@
 import express from 'express'
-import fileRoutes from './routes/weatherRoutes'
+import weatherRoutes from './routes/weatherRoutes'
 
 const app = express()
 
@@ -7,6 +7,6 @@ const app = express()
 app.use(express.json())
 
 // file routes
-app.use('/api', fileRoutes)
+app.use('/api', weatherRoutes)
 
 export default app
